@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../wrapper";
-import { urlFor, client } from "../client";
+import { urlFor } from "../client";
 
 const Testimonial = ({ testimonials, brands }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

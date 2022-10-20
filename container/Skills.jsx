@@ -35,9 +35,8 @@ const Skills = ({ experiences, skills }) => {
               </div>
               <motion.div className="app__skills-exp-works">
                 {experience.works.map((work) => (
-                  <>
+                  <div key={work.name}>
                     <motion.div
-                      key={work.name}
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}
                       className="app__skills-exp-work"
@@ -55,7 +54,7 @@ const Skills = ({ experiences, skills }) => {
                     >
                       {work.desc}
                     </ReactTooltip>
-                  </>
+                  </div>
                 ))}
               </motion.div>
             </motion.div>
@@ -73,9 +72,3 @@ Skills.getLayout = (section) => (
 );
 
 export default Skills;
-
-// export default AppWrap(
-//   MotionWrap(Skills, "app__skills"),
-//   "skills",
-//   "app__whitebg"
-// );

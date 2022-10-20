@@ -6,7 +6,7 @@ const About = ({ abouts }) => {
   return (
     <>
       <h2 className="head-text">
-        I knonw that <span>Pasion</span> <br />
+        Is Known <span>Passion</span> <br />
         is the key for <span>Good Business</span>
       </h2>
 
