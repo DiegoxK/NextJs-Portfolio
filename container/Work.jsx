@@ -1,23 +1,13 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
 import { AppWrap, MotionWrap } from "../wrapper";
-import { urlFor, client } from "../client";
+import { urlFor } from "../client";
 
-function Work() {
-  const [works, setWorks] = useState([]);
-  const [filterWork, setFilterWork] = useState([]);
+function Work({ works }) {
+  const [filterWork, setFilterWork] = useState(works);
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
-
-  useEffect(() => {
-    const query = '*[_type == "works"]';
-
-    client.fetch(query).then((data) => {
-      setWorks(data);
-      setFilterWork(data);
-    });
-  }, []);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -41,7 +31,7 @@ function Work() {
       </h2>
 
       <div className="app__work-filter">
-        {["UI/UX", "Web App", "Mobile App", "React JS", "All"].map(
+        {["UI/UX", "Web App", "Desktop App", "AI", "React JS", "All"].map(
           (item, index) => (
             <div
               key={index}
@@ -122,9 +112,3 @@ Work.getLayout = (section) => (
 );
 
 export default Work;
-
-// export default AppWrap(
-//   MotionWrap(Work, "app__works"),
-//   "work",
-//   "app__primarybg"
-// );

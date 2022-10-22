@@ -7,7 +7,7 @@
 .app__work-filter {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-wrap: wrap;
 
@@ -46,6 +46,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 2rem;
 
   .app__work-item {
     width: 270px;
